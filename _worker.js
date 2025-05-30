@@ -1,9 +1,10 @@
 let urls = [
-	'https://blog.cmliussss.com#Cloudflare CDN',
-	'https://fastly.blog.cmliussss.com#Fastly CDN',
-	'https://gcore.blog.cmliussss.com#Gcore CDN',
-	'https://vercel.blog.cmliussss.com#Vercel CDN',
-	'https://netlify.blog.cmliussss.com#Netlify CDN'
+	'https://blog.haib.top#Cloudflare CDN',
+	'https://dooki.blog.haib.top#DokiDoki CDN',
+	'https://fastly.blog.haib.top#Fastly CDN',
+	'https://netlify.blog.haib.top#Netlify CDN',
+	'https://vercel.blog.haib.top#Vercel CDN',
+	'https://blog.haib.hidns.co#备用地址'
 ];
 
 export default {
@@ -16,11 +17,11 @@ export default {
 		if (env.URL) urls = await ADD(env.URL);
 		
 		const ads = env.ADS || 'google.com, pub-9350003957494520, DIRECT, f08c47fec0942fa0';
-		const 网站图标 = env.ICO || 'https://raw.cmliussss.com/favicon.ico';
-		const 网站头像 = env.PNG || 'https://raw.cmliussss.com/IMG_0038.png';
+		const 网站图标 = env.ICO || 'https://raw.githubusercontent.com/liuyewen111/Blog-CDN-Gateway/refs/heads/main/favicon.ico';
+		const 网站头像 = env.PNG || 'https://images.haib.top/img/351ad088422d46e2bedd52428cc37171.webp';
 		const 网络备案 = env.BEIAN || `<a href='https://icp.gov.moe/'>萌ICP备-20070707号</a>`;
 		const 网页标题 = env.TITLE || 'BlogCDN 智能访问网关';
-		const 站点名称 = env.NAME || 'CMLiussss Blog';
+		const 站点名称 = env.NAME || 'Haib Blog';
 		if (url.pathname.toLowerCase() == '/ads.txt') {
 			return new Response(ads, {
 				headers: {
@@ -31,7 +32,7 @@ export default {
 			return fetch(网站图标);
 		} else {
 			// 先测速，不加载背景图片
-			let img = 'https://raw.cmliussss.com/keqing1080p.jpg'; // 默认图片
+			let img = 'https://images.haib.top/installers/0ea3544d4c194fecb38916383dd5d7ae.webp'; // 默认图片
 			if (env.IMG) {
 				const imgs = await ADD(env.IMG);
 				img = imgs[Math.floor(Math.random() * imgs.length)];
